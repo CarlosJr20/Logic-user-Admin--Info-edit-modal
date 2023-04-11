@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Modal Exemplo</title>
+    <style>
+        /* Estilo para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Estilo para a âncora que abre o modal */
+        .modal-link {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exemplo de Modal</h1>
+    <p>Clique na âncora abaixo para abrir o modal:</p>
+    <a href="#" class="modal-link">Abrir Modal</a>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Título do Modal</h2>
+            <p>Conteúdo do modal.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal quando a âncora for clicada
+        document.querySelector('.modal-link').addEventListener('click', function () {
+            document.getElementById('myModal').style.display = 'block';
+        });
+
+        // Função para fechar o modal quando o botão de fechar for clicado
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('myModal').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
